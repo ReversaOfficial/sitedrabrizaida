@@ -1,23 +1,11 @@
 import { Button } from './Button';
 import { Container } from './Container';
-import { doctor } from '../data/site';
-
 export function Hero({onBooking,onAbout}:{onBooking:()=>void;onAbout:()=>void}) {
-  return <section id="inicio" className="hero" aria-labelledby="hero-title">
-    <Container className="hero-grid">
-      <div className="hero-content">
-        <p className="eyebrow enter-up"><span className="eyebrow-line"/> MEDICINA • SAÚDE • CUIDADO</p>
-        <h1 id="hero-title" className="hero-title enter-up delay-1">Cuidar da sua <em>saúde</em> é também cuidar de você.</h1>
-        <p className="hero-description enter-up delay-2">A Dra. Brizaida acredita em uma medicina que começa pela escuta, entende cada pessoa de forma individual e transforma conhecimento em cuidado.</p>
-        <div className="hero-actions enter-up delay-3"><Button onClick={onBooking}>Agendar consulta ↗</Button><Button variant="text" onClick={onAbout}>Conheça a Dra. Brizaida →</Button></div>
-        <div className="hero-note enter-up delay-3"><span className="note-line"/> Cuidado que começa pela escuta.</div>
-      </div>
-      <div className="hero-visual enter-image">
-        <div className="hero-photo-frame"><div className="hero-photo-placeholder" role="img" aria-label="Espaço reservado para a foto profissional da Dra. Brizaida"><span className="photo-symbol">✳</span><span className="photo-label">FOTO DA DRA.<br/>BRIZAIDA</span><span className="photo-caption">IMAGEM OFICIAL A INSERIR</span></div></div>
-        <div className="photo-accent" aria-hidden="true"/><div className="photo-index" aria-hidden="true">01 / PRESENÇA & CUIDADO</div>
-      </div>
-    </Container>
-    <Container className="hero-bottom"><div className="credential-group"><span>{doctor.crm}</span><span className="credential-divider"/><span>{doctor.specialty}</span><span className="credential-divider"/><span>{doctor.rqe}</span></div><a className="scroll-cue" href="#sobre">EXPLORE ↓</a></Container>
-    <div className="post-hero-rule"/>
-  </section>;
+ return <section id="inicio" className="hero-template">
+  <div className="hero-slide"><div className="hero-overlay"/>
+   <Container className="hero-slide-content"><span className="hero-eyebrow">MEDICINA · SAÚDE · CUIDADO</span><h1>Medical care<br/><em>you can trust.</em></h1><p>Uma medicina que começa pela escuta, entende cada pessoa e transforma conhecimento em cuidado.</p><div><Button onClick={onBooking}>Agendar consulta</Button><Button variant="text" onClick={onAbout}>Conheça a Dra. Brizaida →</Button></div></Container>
+   <div className="hero-placeholder"><span>✳</span><strong>FOTO OFICIAL DA DRA. BRIZAIDA</strong><small>Imagem profissional a inserir</small></div>
+   <div className="hero-arrows"><button aria-label="Anterior">‹</button><button aria-label="Próximo">›</button></div>
+  </div>
+ </section>;
 }
