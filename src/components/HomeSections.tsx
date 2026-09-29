@@ -21,8 +21,6 @@ export function HomeSections(){return <>
 
  <section className="gallery"><Container><div className="section-title"><span>NOSSAS ÁREAS</span><h2>Áreas de <em>cuidado.</em></h2></div><div className="gallery-filters">{['TODAS',...gallery].map(x=><button key={x}>{x}</button>)}</div><div className="gallery-grid">{gallery.map((x,i)=><article key={x} className={i===0?'featured':''}><Media label={x}/><div><span>{x}</span><h3>{i===0?'Cuidado individualizado':'Conheça esta área de atuação'}</h3><a href="/especialidades">Ver mais ↗</a></div></article>)}</div></Container></section>
 
- <section className="offer"><Container className="offer-grid"><div className="offer-copy"><span>CUIDADO MÉDICO</span><h2>Conhecimento que se transforma em <em>cuidado.</em></h2><p>Uma abordagem médica centrada na pessoa, com escuta, avaliação e acompanhamento individualizado.</p><div className="offer-points"><span>Easy appointments</span><span>Care management</span><span>Individual approach</span></div><a href="/tratamentos">Conheça os tratamentos ↗</a></div><Media label="ESPAÇO EDITORIAL · CUIDADO"/></Container></section>
-
  <section className="testimonials"><Container><div className="section-title centered"><span>DEPOIMENTOS</span><h2>O cuidado fala<br/><em>por si.</em></h2></div><div className="testimonial-card"><div className="quote">“</div><p>[ DEPOIMENTO REAL A INSERIR ]</p><span>Nome · cidade · conteúdo pendente de autorização</span></div></Container></section>
 
 
