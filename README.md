@@ -1,49 +1,30 @@
 # Site Dra. Brizaida
 
-Site institucional da Dra. Brizaida.
+Site institucional da **Dra. Brizaida Silot Ramirez Staudt**.
 
-## Status
+## Fase atual
+Fase 1: Design System, Header e Hero. Fotografia e canal oficial de agendamento ainda aguardam confirmação. Páginas internas não foram criadas.
 
-🚧 Projeto em fase inicial de desenvolvimento.
+## Stack
+React 19, TypeScript, Vite 6, CSS nativo e npm.
 
-Este repositório é a fonte de verdade do projeto. Todas as implementações, correções e evoluções devem ser versionadas aqui.
+## Execução
+Requer Node.js 20+.
 
-## Objetivos
+```bash
+npm install
+npm run dev
+npm run typecheck
+npm run build
+```
 
-- Criar uma presença digital profissional para a Dra. Brizaida.
-- Apresentar informações, serviços e conteúdos de forma clara.
-- Desenvolver uma experiência moderna, responsiva e acessível.
-- Manter uma base de código organizada e fácil de evoluir.
+## Estrutura
+- `src/components`: Header, Hero, Button, Container e InfoDialog.
+- `src/data/site.ts`: dados institucionais e navegação centralizados.
+- `src/styles.css`: tokens, tipografia, layout e breakpoints.
+- `index.html`: metadados e fontes.
 
-## Desenvolvimento
+## Direção visual
+Off-white #FAF9F6, texto #202522, verde sálvia #7C9183, verde escuro #34463D; títulos Cormorant Garamond e corpo Manrope.
 
-A stack, arquitetura, rotas, identidade visual e integrações serão definidas durante a implementação inicial do projeto.
-
-Quando a aplicação estiver estruturada, esta documentação será atualizada com:
-
-- Framework e versão
-- Package manager
-- Scripts disponíveis
-- Estrutura de diretórios
-- Rotas
-- Tecnologias de frontend
-- Backend e banco de dados, se houver
-- Variáveis de ambiente
-- Instruções para desenvolvimento local
-- Processo de build e deploy
-
-## Regra do projeto
-
-O código presente neste repositório é a fonte de verdade da aplicação.
-
-Alterações devem ser:
-
-1. Implementadas no código existente.
-2. Validadas antes do commit.
-3. Revisadas no diff.
-4. Registradas em commits descritivos.
-5. Enviadas para este repositório.
-
-## Licença
-
-Projeto privado.
+Não publicar informações profissionais, tratamentos, endereços, contatos ou depoimentos não aprovados. Projeto privado.

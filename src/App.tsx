@@ -1,0 +1,2 @@
+import {useCallback,useState} from 'react';import {Header} from './components/Header';import {Hero} from './components/Hero';import {InfoDialog} from './components/InfoDialog';import './styles.css';
+export default function App(){const [dialog,setDialog]=useState<string|null>(null);const close=useCallback(()=>setDialog(null),[]);return <><Header onBooking={()=>setDialog('Agendar consulta')} onPending={setDialog}/><Hero onBooking={()=>setDialog('Agendar consulta')} onAbout={()=>setDialog('Sobre')}/><InfoDialog title={dialog} onClose={close}/></>}
