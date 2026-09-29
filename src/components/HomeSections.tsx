@@ -8,7 +8,6 @@ const welcome=[
  ['04','Agendamento','Um primeiro passo simples para começar seu cuidado.']
 ];
 const gallery=['CLÍNICA MÉDICA','SAÚDE DA MULHER','EMAGRECIMENTO','MEDICINA DE FAMÍLIA','PREVENÇÃO','EDUCAÇÃO EM SAÚDE'];
-const doctors=[['DRA. BRIZAIDA SILOT RAMIREZ STAUDT','Medicina de Família e Comunidade · CRM-RS 43750 · RQE 44809'],['[PROFISSIONAL A VALIDAR]','Especialidade a validar'],['[PROFISSIONAL A VALIDAR]','Especialidade a validar'],['[PROFISSIONAL A VALIDAR]','Especialidade a validar']];
 const news=[['18 SET','Como olhar para a saúde de forma integral'],['12 SET','Emagrecimento e cuidado individualizado']];
 const departments=['Medicina de Família','Clínica Médica','Saúde da Mulher','Emagrecimento','Prevenção','Educação em Saúde'];
 
