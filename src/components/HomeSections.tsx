@@ -1,5 +1,6 @@
 import { Button } from './Button';
 import { Container } from './Container';
+import { courses } from '../data/site';
 
 const welcome=[
  ['01','Cuidado individual','Cada atendimento começa pela escuta e pela compreensão da pessoa.'],
@@ -25,7 +26,7 @@ export function HomeSections(){return <>
  <section className="testimonials"><Container><div className="section-title centered"><span>DEPOIMENTOS</span><h2>O cuidado fala<br/><em>por si.</em></h2></div><div className="testimonial-card"><div className="quote">“</div><p>[ DEPOIMENTO REAL A INSERIR ]</p><span>Nome · cidade · conteúdo pendente de autorização</span></div></Container></section>
 
 
- <section className="news"><Container><div className="section-title split"><div><span>NOSSOS CONTEÚDOS</span><h2>Informação também<br/>é <em>cuidado.</em></h2></div><a href="/conteudos">Ver todos os conteúdos ↗</a></div><div className="news-grid">{news.map(([date,title],i)=><article key={title}><div className="news-image"><Media label={i===0?'CONTEÚDO · SAÚDE':'CONTEÚDO · EMAGRECIMENTO'}/></div><div className="news-date">{date}</div><h3>{title}</h3><p>Conteúdo demonstrativo preparado para receber o material oficial da Dra. Brizaida.</p><a href="/conteudos">Leia mais ↗</a></article>)}</div></Container></section>
+ <section className="news courses-home"><Container><div className="section-title split"><div><span>CURSOS</span><h2>Conhecimento que<br/>continua <em>além da consulta.</em></h2></div><a href="/cursos">Ver todos os cursos ↗</a></div>{courses.length ? <div className="news-grid">{courses.map(course=><article key={course.slug}><div className="news-image"><Media label={course.imageLabel}/></div><div className="news-date">{course.status==="available"?"DISPONÍVEL":"EM BREVE"}</div><h3>{course.title}</h3><p>{course.excerpt}</p><a href={`/cursos/${course.slug}`}>Conhecer curso ↗</a></article>)}</div> : <div className="courses-empty"><span>EM BREVE</span><h3>Novos cursos serão publicados aqui.</h3><p>Quando um curso for disponibilizado, ele aparecerá automaticamente nesta seção e também na página de Cursos.</p><a href="/cursos">Conheça a página de Cursos ↗</a></div>}</Container></section>
 
  <section className="what-we-offer"><Container><div className="section-title centered"><span>O QUE OFERECEMOS</span><h2>Um cuidado pensado<br/><em>para você.</em></h2></div><div className="offer-list">{['Escuta e avaliação individual','Acompanhamento médico','Saúde e prevenção'].map((x,i)=><article key={x}><b>0{i+1}</b><div><h3>{x}</h3><p>Informação inicial sobre a experiência de cuidado. O conteúdo final será validado com a Dra. Brizaida.</p></div><a href="/tratamentos">Saiba mais ↗</a></article>)}</div></Container></section>
 
