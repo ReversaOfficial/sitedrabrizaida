@@ -2,76 +2,20 @@ import { useEffect, useState } from 'react';
 import { Button } from './Button';
 import { Container } from './Container';
 
-const items = [
-  ['Início', '/'],
-  ['Sobre', '/sobre'],
-  ['Especialidades', '/especialidades'],
-  ['Tratamentos', '/tratamentos'],
-  ['Conteúdos', '/conteudos'],
-  ['Cursos', '/cursos'],
-  ['Contato', '/contato'],
-] as const;
+const items = [['Início','/'],['Sobre','/sobre'],['Especialidades','/especialidades'],['Tratamentos','/tratamentos'],['Conteúdos','/conteudos'],['Cursos','/cursos'],['Contato','/contato']] as const;
 
-export function Header({ onBooking }: { onBooking: () => void; onPending?: (label: string) => void }) {
-  const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    const check = () => setScrolled(window.scrollY > 24);
-    check();
-    window.addEventListener('scroll', check, { passive: true });
-    return () => window.removeEventListener('scroll', check);
-  }, []);
-
-  useEffect(() => {
-    document.body.classList.toggle('menu-open', open);
-    const escape = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false);
-    window.addEventListener('keydown', escape);
-    return () => {
-      document.body.classList.remove('menu-open');
-      window.removeEventListener('keydown', escape);
-    };
-  }, [open]);
-
-  const navigate = (href: string) => {
-    setOpen(false);
-    if (href === '/') {
-      if (window.location.pathname !== '/') window.history.pushState({}, '', '/');
-      window.dispatchEvent(new PopStateEvent('popstate'));
-    } else {
-      window.history.pushState({}, '', href);
-      window.dispatchEvent(new PopStateEvent('popstate'));
-    }
-  };
-
-  return (
-    <header className={`site-header ${scrolled || open ? 'site-header--solid' : ''}`}>
-      <Container className="header-inner">
-        <button className="wordmark" onClick={() => navigate('/')} aria-label="Dra. Brizaida, início">
-          <span className="wordmark-main">Dra. Brizaida</span>
-          <span className="wordmark-caption">MEDICINA & CUIDADO</span>
-        </button>
-
-        <nav className="desktop-nav" aria-label="Navegação principal">
-          {items.map(([label, href]) => (
-            <button key={label} onClick={() => navigate(href)}>{label}</button>
-          ))}
-        </nav>
-
-        <div className="header-actions">
-          <Button className="header-booking" onClick={onBooking}>Agendar consulta ↗</Button>
-          <button type="button" className="menu-toggle" aria-label={open ? 'Fechar menu' : 'Abrir menu'} aria-expanded={open} onClick={() => setOpen(!open)}>
-            <span /><span />
-          </button>
-        </div>
-      </Container>
-
-      <nav className={`mobile-nav ${open ? 'mobile-nav--open' : ''}`} aria-label="Navegação mobile">
-        {items.map(([label, href]) => (
-          <button key={label} onClick={() => navigate(href)}>{label}</button>
-        ))}
-        <Button onClick={() => { setOpen(false); onBooking(); }}>Agendar consulta ↗</Button>
-      </nav>
-    </header>
-  );
+export function Header({onBooking}:{onBooking:()=>void}) {
+  const [solid,setSolid]=useState(false),[open,setOpen]=useState(false);
+  useEffect(()=>{const f=()=>setSolid(window.scrollY>30);f();window.addEventListener('scroll',f,{passive:true});return()=>window.removeEventListener('scroll',f)},[]);
+  useEffect(()=>{document.body.classList.toggle('menu-open',open);return()=>document.body.classList.remove('menu-open')},[open]);
+  const nav=(href:string)=>{setOpen(false);window.history.pushState({},'',href);window.dispatchEvent(new PopStateEvent('popstate'));};
+  return <header className={`site-header ${solid||open?'site-header--solid':''}`}>
+    <div className="topbar"><Container><span>CRM-RS 43750 · RQE 44809</span><span>Medicina de Família e Comunidade</span><a href="https://www.instagram.com/dra.brizaida/" target="_blank" rel="noreferrer">@dra.brizaida ↗</a></Container></div>
+    <Container className="header-inner">
+      <button className="wordmark" onClick={()=>nav('/')} aria-label="Dra. Brizaida"><span className="wordmark-main">Dra. Brizaida</span><span className="wordmark-caption">MEDICINA · SAÚDE · CUIDADO</span></button>
+      <nav className="desktop-nav">{items.map(([label,href])=><button key={label} onClick={()=>nav(href)}>{label}</button>)}</nav>
+      <div className="header-actions"><Button className="header-booking" onClick={onBooking}>Agendar consulta</Button><button className="menu-toggle" onClick={()=>setOpen(!open)} aria-expanded={open} aria-label="Menu"><span/><span/><span/></button></div>
+    </Container>
+    <nav className={`mobile-nav ${open?'mobile-nav--open':''}`}>{items.map(([label,href])=><button key={label} onClick={()=>nav(href)}>{label}</button>)}<Button onClick={()=>{setOpen(false);onBooking()}}>Agendar consulta</Button></nav>
+  </header>;
 }
