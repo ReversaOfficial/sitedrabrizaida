@@ -25,7 +25,6 @@ export function HomeSections(){return <>
 
  <section className="testimonials"><Container><div className="section-title centered"><span>DEPOIMENTOS</span><h2>O cuidado fala<br/><em>por si.</em></h2></div><div className="testimonial-card"><div className="quote">“</div><p>[ DEPOIMENTO REAL A INSERIR ]</p><span>Nome · cidade · conteúdo pendente de autorização</span></div></Container></section>
 
- <section className="doctors"><Container><div className="section-title"><span>DRA. BRIZAIDA</span><h2>Conheça a<br/><em>Dra. Brizaida.</em></h2></div><div className="doctors-grid">{doctors.map(([n,r],i)=><article key={i}><Media label={i===0?'DRA. BRIZAIDA':'PROFISSIONAL A VALIDAR'}/><h3>{n}</h3><p>{r}</p></article>)}</div></Container></section>
 
  <section className="news"><Container><div className="section-title split"><div><span>NOSSOS CONTEÚDOS</span><h2>Informação também<br/>é <em>cuidado.</em></h2></div><a href="/conteudos">Ver todos os conteúdos ↗</a></div><div className="news-grid">{news.map(([date,title],i)=><article key={title}><div className="news-image"><Media label={i===0?'CONTEÚDO · SAÚDE':'CONTEÚDO · EMAGRECIMENTO'}/></div><div className="news-date">{date}</div><h3>{title}</h3><p>Conteúdo demonstrativo preparado para receber o material oficial da Dra. Brizaida.</p><a href="/conteudos">Leia mais ↗</a></article>)}</div></Container></section>
 
