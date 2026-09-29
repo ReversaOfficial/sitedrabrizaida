@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Button } from './Button';
 import { Container } from './Container';
 
-const items = [['Início','/'],['Sobre','/sobre'],['Especialidades','/especialidades'],['Tratamentos','/tratamentos'],['Conteúdos','/conteudos'],['Cursos','/cursos'],['Contato','/contato']] as const;
+const items = [['Início','/'],['Especialidades','/especialidades'],['Tratamentos','/tratamentos'],['Conteúdos','/conteudos'],['Cursos','/cursos'],['Contato','/contato']] as const;
 
 export function Header({onBooking}:{onBooking:()=>void}) {
   const [solid,setSolid]=useState(false),[open,setOpen]=useState(false);
