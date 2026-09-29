@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Base URLs are intentionally relative until the production domain is confirmed. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://sitedrabrizaida.vercel.app/</loc></url>
-  <url><loc>https://sitedrabrizaida.vercel.app/sobre</loc></url>
-  <url><loc>https://sitedrabrizaida.vercel.app/especialidades</loc></url>
-  <url><loc>https://sitedrabrizaida.vercel.app/tratamentos</loc></url>
-  <url><loc>https://sitedrabrizaida.vercel.app/conteudos</loc></url>
-  <url><loc>https://sitedrabrizaida.vercel.app/pesquisa</loc></url>
-  <url><loc>https://sitedrabrizaida.vercel.app/contato</loc></url>
-  <url><loc>https://sitedrabrizaida.vercel.app/cursos</loc></url>
+  <url><loc>/</loc></url>
+  <url><loc>/sobre</loc></url>
+  <url><loc>/especialidades</loc></url>
+  <url><loc>/tratamentos</loc></url>
+  <url><loc>/conteudos</loc></url>
+  <url><loc>/pesquisa</loc></url>
+  <url><loc>/contato</loc></url>
+  <url><loc>/cursos</loc></url>
 </urlset>
