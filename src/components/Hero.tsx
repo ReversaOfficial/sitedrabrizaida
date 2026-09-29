@@ -1,2 +1,23 @@
-import {Button} from './Button';import {Container} from './Container';import {doctor} from '../data/site';
-export function Hero({onBooking,onAbout}:{onBooking:()=>void;onAbout:()=>void}){return <main id="inicio"><section className="hero" aria-labelledby="hero-title"><Container className="hero-grid"><div className="hero-content"><p className="eyebrow enter-up"><span className="eyebrow-line"/> MEDICINA • SAÚDE • CUIDADO</p><h1 id="hero-title" className="hero-title enter-up delay-1">Cuidar da sua <em>saúde</em> é também cuidar de você.</h1><p className="hero-description enter-up delay-2">Uma medicina que valoriza a escuta, o conhecimento e o acompanhamento individualizado. Um olhar atento para você, em cada etapa do cuidado.</p><div className="hero-actions enter-up delay-3"><Button onClick={onBooking}>Agendar consulta ↗</Button><Button variant="text" onClick={onAbout}>Conheça a Dra. Brizaida →</Button></div><div className="hero-note enter-up delay-3"><span className="note-line"/> Cuidado que começa pela escuta.</div></div><div className="hero-visual enter-image"><div className="hero-photo-frame"><div className="hero-photo-placeholder" role="img" aria-label="Espaço reservado para a foto profissional da Dra. Brizaida"><span className="photo-symbol" aria-hidden="true">✳</span><span className="photo-label">UM ROSTO PARA<br/>ESTA HISTÓRIA</span><span className="photo-caption">FOTO DA DRA. BRIZAIDA<br/>EM BREVE</span></div></div><div className="photo-accent" aria-hidden="true"/><div className="photo-index" aria-hidden="true">01 / PRESENÇA & CUIDADO</div></div></Container><Container className="hero-bottom"><div className="credential-group"><span>{doctor.crm}</span><span className="credential-divider"/><span>{doctor.specialty}</span><span className="credential-divider"/><span>{doctor.rqe}</span></div><a className="scroll-cue" href="#credenciais">EXPLORE ↓</a></Container></section><div id="credenciais" className="post-hero-rule"/></main>}
+import { Button } from './Button';
+import { Container } from './Container';
+import { doctor } from '../data/site';
+
+export function Hero({onBooking,onAbout}:{onBooking:()=>void;onAbout:()=>void}) {
+  return <section id="inicio" className="hero" aria-labelledby="hero-title">
+    <Container className="hero-grid">
+      <div className="hero-content">
+        <p className="eyebrow enter-up"><span className="eyebrow-line"/> MEDICINA • SAÚDE • CUIDADO</p>
+        <h1 id="hero-title" className="hero-title enter-up delay-1">Cuidar da sua <em>saúde</em> é também cuidar de você.</h1>
+        <p className="hero-description enter-up delay-2">A Dra. Brizaida acredita em uma medicina que começa pela escuta, entende cada pessoa de forma individual e transforma conhecimento em cuidado.</p>
+        <div className="hero-actions enter-up delay-3"><Button onClick={onBooking}>Agendar consulta ↗</Button><Button variant="text" onClick={onAbout}>Conheça a Dra. Brizaida →</Button></div>
+        <div className="hero-note enter-up delay-3"><span className="note-line"/> Cuidado que começa pela escuta.</div>
+      </div>
+      <div className="hero-visual enter-image">
+        <div className="hero-photo-frame"><div className="hero-photo-placeholder" role="img" aria-label="Espaço reservado para a foto profissional da Dra. Brizaida"><span className="photo-symbol">✳</span><span className="photo-label">FOTO DA DRA.<br/>BRIZAIDA</span><span className="photo-caption">IMAGEM OFICIAL A INSERIR</span></div></div>
+        <div className="photo-accent" aria-hidden="true"/><div className="photo-index" aria-hidden="true">01 / PRESENÇA & CUIDADO</div>
+      </div>
+    </Container>
+    <Container className="hero-bottom"><div className="credential-group"><span>{doctor.crm}</span><span className="credential-divider"/><span>{doctor.specialty}</span><span className="credential-divider"/><span>{doctor.rqe}</span></div><a className="scroll-cue" href="#sobre">EXPLORE ↓</a></Container>
+    <div className="post-hero-rule"/>
+  </section>;
+}
